@@ -14,6 +14,17 @@
 		{
 			"loop": false,
 			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
 				30,
 				-90
 			],
@@ -43,28 +54,6 @@
 			"fps": 24,
 			"name": "Right instance",
 			"indices": []
-		},
-		{
-			"loop": true,
-			"offsets": [
-				0,
-				0
-			],
-			"anim": "idle",
-			"fps": 24,
-			"name": "Idle instance",
-			"indices": []
-		},
-		{
-			"offsets": [
-				0,
-				20
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "attack",
-			"loop": false,
-			"name": "Hadoken or Roundabout instance"
 		}
 	],
 	"no_antialiasing": false,

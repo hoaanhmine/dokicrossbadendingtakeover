@@ -1,0 +1,84 @@
+local aaa = false
+
+function onCreate()
+ addCharacterToList('sus','bf')
+ addCharacterToList('wsus','bf')
+ addCharacterToList('badsus','bf')
+ addCharacterToList('badasssus','bf')
+ addCharacterToList('deadsus','bf')
+ addCharacterToList('colorsus','bf')
+ addCharacterToList('nut','dad')
+	makeLuaSprite('battle','battle',-300,-400)
+	 scaleObject('battle',0.85,0.85)
+		setProperty('battle.alpha',0)
+			addLuaSprite('battle',false)
+	makeAnimatedLuaSprite('dodge','attack2',100,-100)
+	addAnimationByPrefix('dodge','dodge','finally idle',24,false)
+	addLuaSprite('dodge',true)
+	scaleObject('dodge',1,1)
+	setProperty('dodge.alpha',1)
+	makeAnimatedLuaSprite('attack','attack',50,-400 + 1125)
+	addAnimationByPrefix('attack','attack','Bones boi instance',24,false)
+	addLuaSprite('attack',true)
+	scaleObject('attack',1,1)
+	setProperty('attack.alpha',0)
+end
+
+function onStepHit()
+	if curStep == 784 then
+	 setProperty('battle.alpha',1)
+	 aaa = true
+	 setProperty('boyfriend.x', 100 + 250)
+	 setProperty('dad.x', 100 + 250)
+	 setProperty('boyfriend.y', -400 + 500)
+	 setProperty('dad.y', -400 + 1125)
+	elseif curStep == 1297 or curStep == 1299 then
+	 setProperty('battle.alpha',0)
+	 triggerEvent('Camera Follow Pos', '', '')
+	end
+	if curStep >= 784 and curStep <= 1297 and mustHitSection == true then
+	 triggerEvent('Camera Follow Pos', '600', '400')
+	elseif curStep > 783 and curStep < 1298 and mustHitSection == false then
+	 triggerEvent('Camera Follow Pos', '600', '1000')
+	end
+	if curStep == 1298 then
+	 aaa = false
+	end
+	if curStep == 2064 then
+		scaleObject('boyfriend',0.8,0.8)
+		setProperty('boyfirend', getCharacterY('boyfriend') + 150)
+	elseif curStep == 2192 then
+		scaleObject('boyfriend',1,1)
+		setProperty('boyfirend', getCharacterY('boyfriend') - 	150)
+	end
+end
+
+function goodNoteHit(id, direction, noteType, isSustainNote)
+	if noteType == 'blue note' then
+	 setProperty('dodge.alpha',1)
+	 objectPlayAnimation('dodge','dodge',true)
+	 runTimer('atk',0.7)
+	end
+	if noteType == 'orange note' or noteType == 'orange note(noAnim)' then
+	 setProperty('attack.alpha',1)
+	 objectPlayAnimation('attack','attack',true)
+	 runTimer('bones',1)
+	end
+end
+
+function onTimerCompleted(t)
+	if t == 'atk' then
+	 setProperty('dodge.alpha',0)
+	elseif t == 'bones' then
+	 setProperty('attack.alpha',0)
+	end
+end
+
+function opponentNoteHit()
+	if aaa == true then
+		if getProperty('health') > 0.001 then
+		 health = getProperty('health')
+		 setProperty('health', health- 0.005);
+		end
+	end
+end

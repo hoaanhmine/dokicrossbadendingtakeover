@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				130,
+				110
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				-90
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down  instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				192,
+				-120
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left instance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				-60
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right instance",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle instance",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				20
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "attack",
+			"loop": false,
+			"name": "Hadoken or Roundabout instance"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Nightmare_Cuphead",
+	"position": [
+		70,
+		50
+	],
+	"healthicon": "cupdead",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		-70,
+		110
+	],
+	"sing_duration": 6.1,
+	"scale": 1.4
+}

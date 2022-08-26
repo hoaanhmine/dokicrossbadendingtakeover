@@ -1,0 +1,23 @@
+{
+	"songs": [
+		["STAGNANT", "sayorisad", [255, 0, 0]],
+		["MARKOV", "yuri-crazy", [255, 0, 0]],
+		["HOME", "glitchnatsuki", [255, 0, 0]]
+	],
+
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekBackground": "",
+
+	"difficulties": "Hard",
+	"storyName": "",
+	"weekBefore": "doki",
+	"weekName": "BAD END",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}
